@@ -4,9 +4,9 @@ This is a template repository to help a bit complex project set up that allows t
 
 ## How to set up
 
-1. Create a new repository from this template ([ref](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template))
-2. Copy `tools` to the root directory.
-3. Replace `CONTEST_ID` in `submit.sh`
+1. Create a new repository from this template ([ref](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)). **USE "PRIVATE" FOR ACTIVE CONTESTS**
+2. Copy `tools` (offical tester linked from the problem page) to the root directory.
+3. Replace `CONTEST_ID` in `submit.sh`.
 
 ## How to use this template
 
