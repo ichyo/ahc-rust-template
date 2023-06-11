@@ -1,6 +1,7 @@
 # ahc-rust-template
 
-This is a template repository to help a bit complex project set up that allows to write multi-testcases evaluation easily.
+This is a template repository for AHC (e.g., https://atcoder.jp/contests/ahc020).
+It helps a bit complex project set up that allows to write multi-testcases evaluation easily.
 
 ## How to set up
 
