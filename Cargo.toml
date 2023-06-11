@@ -1,0 +1,11 @@
+[workspace]
+
+members = [
+    "solver",
+    "evaluator",
+    "submission",
+]
+
+exclude = [
+    "tools",
+]
