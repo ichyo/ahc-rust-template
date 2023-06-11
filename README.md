@@ -3,7 +3,11 @@
 This is a template repository for AHC (e.g., https://atcoder.jp/contests/ahc020).
 It helps a bit complex project set up that allows to write multi-testcases evaluation easily.
 
-## How to set up
+## Preliminary
+
+* Install https://github.com/qryxip/cargo-equip. (In case you get segfault from the tool, try https://github.com/ichyo/cargo-equip)
+
+## How to set up a repository for a new contest
 
 1. Create a new repository from this template ([ref](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)). **USE "PRIVATE" FOR ACTIVE CONTESTS**
 2. Copy `tools` (offical tester linked from the problem page) to the root directory.
