@@ -24,4 +24,4 @@ It helps a bit complex project set up that allows to write multi-testcases evalu
 
 ## Tips
 
-* library versions in Atcoder environment are listed at https://github.com/rust-lang-ja/atcoder-rust-resources/wiki/2020-Update
+* library versions in Atcoder environment are listed at https://github.com/rust-lang-ja/atcoder-rust-resources/wiki/2020-Update (2020 version) or https://img.atcoder.jp/file/language-update/language-list.html (2023 version)
