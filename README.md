@@ -16,7 +16,7 @@ It helps a bit complex project set up that allows to write multi-testcases evalu
 
 ## How to use this template
 
-* Update `solver/src/lib.rs` to define problem IO format and your solution
+* Update `common/src/lib.rs` to define problem IO format and your solution
 * Update `submission/src/main.rs` to define text parser/printer for Atcoder.
 * Update `evaluator/src/main.rs` to define generation and evaluation of test cases with official `tools` crate.
 * Run `cargo run --bin evaluator -- -n 1000` to run your evaluation against multiple test cases to get aggregated score.
