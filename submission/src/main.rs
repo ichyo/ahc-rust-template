@@ -1,6 +1,6 @@
 use proconio::input;
 
-use solver::*;
+use common::*;
 
 struct Atcoder {}
 

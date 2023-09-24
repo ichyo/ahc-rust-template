@@ -9,5 +9,5 @@ edition = "2021"
 rayon = "1"
 clap = { version = "4.0.22", features = ["derive"] }
 
-solver = { path = "../solver" }
+common = { path = "../common" }
 tools = { path = "../tools" }

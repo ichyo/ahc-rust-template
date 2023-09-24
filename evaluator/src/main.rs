@@ -1,6 +1,6 @@
 use clap::Parser;
+use common::*;
 use rayon::prelude::*;
-use solver::*;
 
 struct Evaluator {
     seed: u64,

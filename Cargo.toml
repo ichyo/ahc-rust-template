@@ -1,7 +1,7 @@
 [workspace]
 
 members = [
-    "solver",
+    "common",
     "evaluator",
     "submission",
 ]

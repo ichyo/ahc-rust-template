@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 proconio = "=0.3.6"
-solver = { path = "../solver" }
+common = { path = "../common" }
