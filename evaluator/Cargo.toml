@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 rayon = "1"
-clap = { version = "4.0.22", features = ["derive"] }
+clap = { version = "4", features = ["derive"] }
 
 common = { path = "../common" }
 tools = { path = "../tools" }
