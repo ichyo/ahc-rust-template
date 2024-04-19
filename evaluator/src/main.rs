@@ -7,6 +7,11 @@ struct Evaluator {
     score: i64,
 }
 
+struct Result {
+    seed: u64,
+    score: i64,
+}
+
 impl Evaluator {
     fn new(seed: u64) -> Evaluator {
         Evaluator { seed, score: 0 }
@@ -38,15 +43,23 @@ struct Args {
 fn main() {
     let args = Args::parse();
 
-    let score_sum: i64 = (0..args.num_testcase)
+    let results: Vec<Result> = (0..args.num_testcase)
         .into_par_iter()
         .map(|seed| {
             let mut evaluator = Evaluator::new(seed);
             solve(&mut evaluator);
-            println!("seed={} score={}", seed, evaluator.score);
-            evaluator.score
+            Result {
+                seed: seed,
+                score: evaluator.score,
+            }
         })
-        .sum();
+        .collect();
+
+    for result in results.iter() {
+        println!("seed:{:>3} score:{:>9}", result.seed, result.score);
+    }
+
+    let score_sum = results.iter().map(|r| r.score).sum::<i64>();
 
     println!("average: {}", score_sum as f64 / args.num_testcase as f64);
 }
