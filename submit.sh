@@ -15,7 +15,7 @@ cargo check
 tmpfile=$(mktemp /tmp/submission.XXXXXX.rs)
 
 echo "Writing submission file to $tmpfile"
-cargo +1.76 equip --bin submission --exclude-atcoder-202301-crates --no-check > $tmpfile
+./generate.sh > $tmpfile
 
 echo "Submitting to $CONTEST_ID"
 oj submit "https://atcoder.jp/contests/${CONTEST_ID}/tasks/${TASK_ID}" $tmpfile -y
