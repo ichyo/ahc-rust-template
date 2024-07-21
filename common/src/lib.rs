@@ -20,7 +20,9 @@ pub trait Environment {
     fn send_output(&mut self, output: ProblemOutput);
 }
 
-pub struct Atcoder {}
+pub struct Atcoder {
+    pub is_local: bool,
+}
 
 impl Environment for Atcoder {
     fn receive_input(&mut self) -> ProblemInput {
