@@ -5,7 +5,7 @@ It helps a bit complex project set up that allows to write multi-testcases evalu
 
 ## Preliminary
 
-* Install https://github.com/qryxip/cargo-equip.
+* Install https://github.com/qryxip/cargo-equip. (or https://github.com/ichyo/cargo-equip/)
 * Install https://github.com/online-judge-tools/oj
 
 ## How to set up a repository for a new contest
