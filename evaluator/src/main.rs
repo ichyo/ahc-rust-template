@@ -69,6 +69,8 @@ fn main() {
     }
 
     let score_sum = results.iter().map(|r| r.score).sum::<i64>();
+    let max_elapsed = results.iter().map(|r| r.elapsed).max().unwrap_or(Duration::ZERO);
 
     println!("average: {}", score_sum as f64 / args.num_testcase as f64);
+    println!("max time: {}ms", max_elapsed.as_millis());
 }
