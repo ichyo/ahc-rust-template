@@ -1,6 +1,7 @@
 use clap::Parser;
 use common::*;
 use rayon::prelude::*;
+use std::time::{Duration, Instant};
 
 struct Evaluator {
     seed: u64,
@@ -10,6 +11,7 @@ struct Evaluator {
 struct Result {
     seed: u64,
     score: i64,
+    elapsed: Duration,
 }
 
 impl Evaluator {
@@ -47,16 +49,23 @@ fn main() {
         .into_par_iter()
         .map(|seed| {
             let mut evaluator = Evaluator::new(seed);
+            let start = Instant::now();
             solve(&mut evaluator);
+            let elapsed = start.elapsed();
             Result {
                 seed: seed,
                 score: evaluator.score,
+                elapsed: elapsed,
             }
         })
         .collect();
 
     for result in results.iter() {
-        println!("seed:{:>3} score:{:>9}", result.seed, result.score);
+        println!("seed:{:>3} score:{:>9} time:{:>5}ms", 
+            result.seed, 
+            result.score, 
+            result.elapsed.as_millis()
+        );
     }
 
     let score_sum = results.iter().map(|r| r.score).sum::<i64>();
