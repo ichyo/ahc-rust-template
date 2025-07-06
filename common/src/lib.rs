@@ -53,8 +53,14 @@ pub fn solve<E: Environment>(environment: &mut E) {
 
     let input = environment.receive_input();
     let mut rng = SmallRng::seed_from_u64(58);
+
+    std::thread::sleep(std::time::Duration::from_millis(
+        thread_rng().gen_range(100..500),
+    ));
+
     let output = ProblemOutput {
         result: input.a + input.b + rng.gen_range(0..10),
     };
+
     environment.send_output(output);
 }

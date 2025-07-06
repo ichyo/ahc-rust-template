@@ -1,5 +1,6 @@
 use clap::Parser;
 use common::*;
+use indicatif::{ParallelProgressIterator, ProgressIterator};
 use rayon::prelude::*;
 use std::time::{Duration, Instant};
 
@@ -51,6 +52,7 @@ fn main() {
 
     let results: Vec<Result> = (0..args.num_testcase)
         .into_par_iter()
+        .progress_count(args.num_testcase)
         .map(|seed| {
             let mut evaluator = Evaluator::new(seed);
             let start = Instant::now();
@@ -65,15 +67,20 @@ fn main() {
         .collect();
 
     for result in results.iter() {
-        println!("seed:{:>3} score:{:>9} time:{:>5}ms", 
-            result.seed, 
-            result.score, 
+        println!(
+            "seed:{:>3} score:{:>9} time:{:>5}ms",
+            result.seed,
+            result.score,
             result.elapsed.as_millis()
         );
     }
 
     let score_sum = results.iter().map(|r| r.score).sum::<i64>();
-    let max_elapsed = results.iter().map(|r| r.elapsed).max().unwrap_or(Duration::ZERO);
+    let max_elapsed = results
+        .iter()
+        .map(|r| r.elapsed)
+        .max()
+        .unwrap_or(Duration::ZERO);
 
     println!("average: {}", score_sum as f64 / args.num_testcase as f64);
     println!("max time: {}ms", max_elapsed.as_millis());
