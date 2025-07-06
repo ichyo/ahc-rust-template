@@ -33,6 +33,10 @@ impl Environment for Evaluator {
         // Use `tools` to compute score
         self.score = output.result;
     }
+
+    fn is_debug(&self) -> bool {
+        false
+    }
 }
 
 #[derive(Parser, Debug)]

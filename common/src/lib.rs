@@ -18,6 +18,7 @@ pub trait Environment {
 
     fn receive_input(&mut self) -> ProblemInput;
     fn send_output(&mut self, output: ProblemOutput);
+    fn is_debug(&self) -> bool;
 }
 
 pub struct Atcoder {
@@ -40,6 +41,10 @@ impl Environment for Atcoder {
         // Write print of text output here
 
         println!("{}", output.result);
+    }
+
+    fn is_debug(&self) -> bool {
+        self.is_local
     }
 }
 
